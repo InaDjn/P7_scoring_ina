@@ -14,9 +14,12 @@ import json
 app = FastAPI()
 
 # Initialize files
+# Chargement du modèle optimisé
 classifier = joblib.load("best_model_prototype.pickle")
 print('Classifier: ', classifier)
+# Chargement du OneHotEncoder
 enc = joblib.load('encoder.pickle')
+# Chargement de la liste des features sélectionnées
 features = joblib.load('features.pickle')
 
 
