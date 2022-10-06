@@ -84,7 +84,7 @@ def predict_homecredit(data: HomeCredit):
     # 0: the loan was repaid => "Solvent client"
     # 1: the loan was not repaid. => "Insolvent client"
 
-
+    # retourne la prédiction de scoring pour les classes 0 et 1
     return {
         'prediction': prediction
     }
