@@ -35,7 +35,7 @@ def get_name(name: str):
     return {f'Hello {name}, welcome to the Credit Scoring API. We try to predict if you will be in default or not.'}
 
 
-# 3. Expose the prediction functionality, make a prediction from the passed
+# 4. Expose the prediction functionality, make a prediction from the passed
 #   JSON data and return the predicted HomeCredit score with the confidence
 @app.post('/predict')
 def predict_homecredit(data: HomeCredit):
@@ -76,6 +76,7 @@ def predict_homecredit(data: HomeCredit):
     to_predict = np.array(other_features + encoded_features)
 
     # Prediction with our trained model
+    # predict_proba returns a scoring between 0 and 1
     prediction = classifier.predict_proba(to_predict.reshape(1, -1))
 
     print(prediction)
